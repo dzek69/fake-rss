@@ -1,11 +1,11 @@
 {
   "name": "fake-rss",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "2.0.0",
+  "main": "server.js",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.15.3",
-    "lodash": "^4.17.4",
-    "lorem-ipsum": "^1.0.4"
+    "express": "^4.17.1",
+    "lodash.sample": "^4.2.1",
+    "lorem-ipsum": "^1.0.6"
   }
 }

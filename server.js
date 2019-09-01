@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express();
-const _ = require("lodash");
+const sample = require("lodash.sample");
 const lorem = require("lorem-ipsum");
+
+const pubDate = require("./pubDate");
 
 const titles = [
     "This is random title %s",
@@ -14,13 +16,13 @@ const titles = [
 let c = 0;
 
 const generateItem = () => {
-    const title = _.sample(titles).replace("%s", Date.now() + "_" + (c++));
+    const title = sample(titles).replace("%s", Date.now() + "_" + (c++));
 
     return `
     <item>
         <title>${title}</title>
         <link>http://awesome-site-with-a-long.name.com/article.number.${c}.html</link>
-        <pubDate>Sun, 28 May 2017 09:29:52 +0000</pubDate>
+        <pubDate>${pubDate()}</pubDate>
         <description>${lorem()}</description>
     </item>`
 };
